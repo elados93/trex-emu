@@ -10,7 +10,7 @@ source ./b
 
 if [[ $1 == "build" ]]; then
     cd ../src
-    go install $2 cmd/trex-emu.go
+    go build $2 cmd/trex-emu.go
 
 elif [[ $1 == "test" ]]; then
     cd ../src
