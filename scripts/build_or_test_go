@@ -1,5 +1,7 @@
 #! /bin/bash
 
+whoami
+
 # add PATH variable for remote ssh commands 
 which go
 if [[ $? != 0 ]]; then
