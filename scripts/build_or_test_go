@@ -1,7 +1,5 @@
 #! /bin/bash
 
-whoami
-
 # add PATH variable for remote ssh commands 
 which go
 if [[ $? != 0 ]]; then
@@ -28,6 +26,7 @@ elif [[ $1 == "test" ]]; then
             fi
         fi
     done
+    echo "Go tests passed :-)"
 else
     echo "please provide build or test, unknown commad: $1"
     exit 1
