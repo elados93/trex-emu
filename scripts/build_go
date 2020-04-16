@@ -2,7 +2,7 @@
 
 # add PATH variable for remote ssh commands 
 which go
-if [[ $? !=0 ]]; then
+if [[ $? != 0 ]]; then
     export PATH=$PATH:/usr/local/go/bin
 fi
 
