@@ -1,7 +1,10 @@
-#!/bin/bash
+#! /bin/bash
+
+source ./b
+
 go test emu/core
 
-for p in emu/plugins/*; do
+for p in ../src/emu/plugins/*; do
     if [[ $(find ./$p -type f -name *"_test.go") ]]; then
         go test $p
         RESULT=$?
