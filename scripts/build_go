@@ -1,5 +1,6 @@
 #! /bin/bash
 
+echo "I got: ${1}"
+
 source ./b
-cd src
 go install $1 cmd/trex-emu.go
