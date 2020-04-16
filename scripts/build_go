@@ -1,10 +1,5 @@
 #! /bin/bash
 
-which go
-if [[  $? != 0  ]]; then
-    export PATH=$PATH:/usr/local/go/bin
-fi
-
 source ./b
 cd ../src
 go install $1 cmd/trex-emu.go
