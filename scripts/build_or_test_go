@@ -1,0 +1,32 @@
+#! /bin/bash
+
+# add PATH variable for remote ssh commands 
+which go
+if [[ $? != 0 ]]; then
+    export PATH=$PATH:/usr/local/go/bin
+fi
+
+source ./b
+
+if [[ $1 == "build" ]]; then
+    cd ../src
+    go install $2 cmd/trex-emu.go
+
+elif [[ $1 == "test" ]]; then
+    cd ../src
+    go test emu/core
+
+    for p in emu/plugins/*; do
+        if [[ $(find ./$p -type f -name *"_test.go") ]]; then
+            go test $p
+            RESULT=$?
+            if [[ $RESULT != 0 ]]; then
+                echo Test of "$p" failed!
+                exit $RESULT
+            fi
+        fi
+    done
+else
+    echo "please provide build or test, unknown commad: $1"
+    exit 1
+fi
