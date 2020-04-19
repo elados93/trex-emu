@@ -25,8 +25,6 @@ elif [[ $1 == "test" ]]; then
         fi
     done
     echo "Go tests passed :-)"
-elif [[ $1 == "clean" ]]; then
-    go clean
 else
     echo "please provide build or test, unknown commad: $1"
     exit 1
