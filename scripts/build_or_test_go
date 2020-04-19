@@ -9,7 +9,7 @@ source ./b
 if [[ $1 == "build" ]]; then
     cd ../src
     go build $2 cmd/trex-emu.go
-
+    rm -rf ../pkg
 elif [[ $1 == "test" ]]; then
     cd ../src
     go test emu/core
