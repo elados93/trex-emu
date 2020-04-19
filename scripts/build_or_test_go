@@ -1,10 +1,8 @@
 #! /bin/bash
 
 # add PATH variable for remote ssh commands 
-which go
-if [[ $? != 0 ]]; then
-    export PATH=$PATH:/usr/local/go/bin
-fi
+
+export PATH=$PATH:/usr/local/go/bin
 
 source ./b
 
