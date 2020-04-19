@@ -9,8 +9,6 @@ source ./b
 if [[ $1 == "build" ]]; then
     cd $GOPATH/src
     go build $2 cmd/trex-emu.go
-    cd $GOPATH
-    go clean -modcache
 elif [[ $1 == "test" ]]; then
     cd $GOPATH/src
     go test emu/core
@@ -26,6 +24,9 @@ elif [[ $1 == "test" ]]; then
         fi
     done
     echo "Go tests passed :-)"
+elif [[ $1 == "clean" ]]; then
+    cd $GOPATH
+    go clean -modcache
 else
     echo "please provide build or test, unknown commad: $1"
     exit 1
